@@ -1,0 +1,145 @@
+:root {
+  --pink: #f8c8dc;
+  --pastel: #fde2e4;
+  --cream: #fff5e1;
+  --brown: #6f4e37;
+  --chocolate: #4b2e2e;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--cream);
+  color: #333;
+  line-height: 1.6;
+}
+
+nav {
+  background: var(--white);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h2 {
+  color: var(--chocolate);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--pink);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--pink), var(--pastel));
+  padding: 80px 20px;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--chocolate);
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section h2 {
+  color: var(--brown);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.highlight {
+  background: var(--white);
+  border-left: 6px solid var(--pink);
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: var(--brown);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width:768px){
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
