@@ -116,41 +116,50 @@ Anika’s Homemade Cake Studio
 </nav>
 
 <!-- Contact Section -->
+<section class="contact-top">
+<div class="contact-grid">
+<!-- Address Section -->
+<div class="contact-card">
+<h3>📍 Address</h3>
 
-<section class="contact-section">
+<p>Anika’s Homemade Cake Studio, Vision Aristo, Mukai Chowk<br> Ravet, Pune, Maharashtra – 412101
+</p>
+<p>🎂 Purely Eggless & Hygienic Cakes</p>
+<p>📲 WhatsApp Orders Only</p>
+</div>
 
-<h2>Contact Us</h2>
 
-<div class="contact-box">
+<!-- Order Form -->
+<div class="contact-card">
+<h3>🎂 Cake Order Request</h3>
+<form id="orderForm">
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<select>
+<option>Birthday Cake</option>
+<option>Anniversary Cake</option>
+<option>Kids Theme Cake</option>
+<option>Custom Cake</option>
+</select>
+<textarea placeholder="Cake details (flavor, weight, design)"></textarea>
+<button type="submit">Send Order</button>
+</form>
+</div>
 
-<p>📍 <strong>Location:</strong><br>
-Anika’s Homemade Cake Studio, Sr No-39, Vision Aristo, Mukai Chowk,<br>
-Ravet, Pune, Maharashtra – 412101</p>
-
-<p>🎂 <strong>Specialty:</strong><br>
-Purely Eggless & Hygienic Homemade Cakes</p>
-
-<p>📲 <strong>Order Method:</strong><br>
-WhatsApp Orders Only</p>
-
-<div class="contact-buttons">
-
+<!-- Social / Order Buttons -->
+<div class="contact-card">
+<h3>Connect With Us</h3>
 <a class="contact-btn whatsapp"
 href="https://wa.me/919503025610"
-target="_blank">Order Now</a>
-
+target="_blank">Order on WhatsApp</a>
 <a class="contact-btn instagram"
 href="https://instagram.com/"
-target="_blank">View Instagram</a>
-
+target="_blank">Instagram</a>
 <a class="contact-btn google-review"
-href="https://g.page/r/CYWTIQpPnfqyEBM/review"
+href="https://search.google.com/local/writereview?placeid="
 target="_blank">Leave Google Review</a>
-
 </div>
-
 </div>
-
 </section>
 
 <!-- Map -->
@@ -206,6 +215,28 @@ loading="lazy">
 <p style="text-align:center">© 2026 Anika’s Homemade Cake Studio</p>
 
 </footer>
+<script>
 
+document.getElementById("orderForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.querySelector('input[type="text"]').value;
+let phone = document.querySelector('input[type="tel"]').value;
+let cake = document.querySelector('select').value;
+let details = document.querySelector('textarea').value;
+
+let message =
+"Hello, I want to order a cake.%0A%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Cake Type: "+cake+"%0A"+
+"Details: "+details;
+
+window.open("https://wa.me/919503025610?text="+message);
+
+});
+
+</script>
 </body>
 </html>
