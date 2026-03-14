@@ -1,81 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | Anika’s Homemade Cake Studio</title>
-<meta name="description" content="Explore our birthday, anniversary, theme and fondant cake designs in Ravet, Pune.">
+
+<title>Cake Gallery | Anika’s Homemade Cake Studio</title>
+
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+.gallery-filter{
+text-align:center;
+margin:30px 0;
+}
+
+.gallery-filter button{
+padding:10px 18px;
+border:none;
+background:#6b3e26;
+color:white;
+margin:5px;
+border-radius:20px;
+cursor:pointer;
+font-size:14px;
+}
+
+.gallery-filter button:hover{
+background:#8c5a3c;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+padding:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.gallery-item{
+overflow:hidden;
+border-radius:12px;
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+height:220px;
+object-fit:cover;
+transition:transform .4s ease;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* Lightbox */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+}
+
+.lightbox span{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<nav class="main-nav">
-<div class="nav-container">
-<div class="logo">
-Anika’s Homemade Cake Studio
-</div>
-<ul class="nav-menu">
+<nav>
+<h2>Anika’s Oven Studio</h2>
+<ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="reviews.html">Reviews</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
-</div>
 </nav>
 
-<section class="section">
-<h2>Our Cake Gallery</h2>
+<h1 style="text-align:center;margin-top:30px;">Our Cake Gallery</h1>
 
-<div class="card-grid">
-<div class="card">Birthday Cake Designs</div>
-<div class="card">Anniversary Cake Collection</div>
-<div class="card">Theme Cakes</div>
-<div class="card">Fondant Creations</div>
-<div class="card">Custom Photo Cakes</div>
-<div class="card">Designer Surprise Cakes</div>
-<div class="card">Bento Cakes</div>
+<!-- FILTER BUTTONS -->
+
+<div class="gallery-filter">
+
+<button onclick="filterSelection('all')">All</button>
+<button onclick="filterSelection('birthday')">Birthday</button>
+<button onclick="filterSelection('theme')">Theme Cakes</button>
+<button onclick="filterSelection('kids')">Kids Cakes</button>
+<button onclick="filterSelection('anniversary')">Anniversary</button>
+
 </div>
 
-<section class="gallery-section">
-<h2>Birthday Cakes</h2>
+
+<!-- GALLERY GRID -->
+
 <div class="gallery-grid">
-<img src="images/10.jpeg" alt="Birthday Cake" style="width:100%; border-radius:12px;">
-<img src="images/5.jpeg" alt="Birthday Cake" style="width:100%; border-radius:12px;">
-<video controls>
-<source src="images/Video1.mp4" type="video/mp4">
-</video>
-</div>
-</section>
 
-<section class="gallery-section">
-<h2>Anniversary Cakes</h2>
-<div class="gallery-grid">
-<img src="images/4.jpeg" alt="Birthday Cake" style="width:100%; border-radius:12px;">
-<img src="images/4.jpeg" alt="Anniversary Cake">
+<div class="gallery-item birthday">
+<img src="images/birthday1.jpg" onclick="openLightbox(this.src)">
 </div>
-</section>
 
-<section class="gallery-section">
-<h2>Theme Cakes</h2>
-<div class="gallery-grid">
-<img src="images/1.jpeg" alt="Birthday Cake" style="width:100%; border-radius:12px;">
-<img src="images/1.jpeg">
-<video controls>
-<source src="images/Video1.mp4" type="video/mp4">
-</video>
+<div class="gallery-item birthday">
+<img src="images/birthday2.jpg" onclick="openLightbox(this.src)">
 </div>
-</section>
 
+<div class="gallery-item theme">
+<img src="images/theme1.jpg" onclick="openLightbox(this.src)">
+</div>
+
+<div class="gallery-item kids">
+<img src="images/kids1.jpg" onclick="openLightbox(this.src)">
+</div>
+
+<div class="gallery-item anniversary">
+<img src="images/anniversary1.jpg" onclick="openLightbox(this.src)">
+</div>
+
+<div class="gallery-item theme">
+<img src="images/theme2.jpg" onclick="openLightbox(this.src)">
+</div>
+
+</div>
+
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" class="lightbox">
+<span onclick="closeLightbox()">×</span>
+<img id="lightbox-img">
+</div>
+
+
+<script>
+
+/* FILTER */
+
+function filterSelection(category){
+
+let items = document.getElementsByClassName("gallery-item");
+
+for(let i=0;i<items.length;i++){
+
+if(category === "all"){
+items[i].style.display="block";
+}
+else{
+if(items[i].classList.contains(category)){
+items[i].style.display="block";
+}
+else{
+items[i].style.display="none";
+}
+}
+
+}
+
+}
+
+
+/* LIGHTBOX */
+
+function openLightbox(src){
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("lightbox-img").src=src;
+
+}
+
+function closeLightbox(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+</script>
 
 
 <footer>
-<p>📍 Vision Aristo, Mukai Chowk, Ravet, Pune, Maharashtra - 412101</p>
-<p>© 2026 Anika’s Homemade Cake Studio</p>
+<p>© 2026 Anika’s Oven Studio</p>
 </footer>
-
-<a class="whatsapp-float" href="https://wa.me/919503025610?text=Good%20day%2C%0A%0AI%20would%20like%20to%20place%20an%20order%20for%20a%20cake.%20Kindly%20provide%20details%20regarding%20the%20available%20flavors%2C%20sizes%2C%20pricing%2C%20and%20delivery%20or%20pickup%20options.%0A%0AThank%20you%20in%20advance%20for%20your%20assistance." target="_blank">Order Now</a>
 
 </body>
 </html>
