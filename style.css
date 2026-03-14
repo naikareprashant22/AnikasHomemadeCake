@@ -358,10 +358,13 @@ align-items:center;
 
 /* Logo */
 
-.logo{
-font-size:22px;
-font-weight:600;
-color:#4a2c2a;
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    font-family: serif;
+    font-size: xx-large;
+    font-style: italic;
 }
 
 /* Menu */
