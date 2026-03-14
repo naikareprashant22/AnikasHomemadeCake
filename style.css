@@ -339,7 +339,7 @@ font-weight:bold;
 /* NAVBAR */
 
 .main-nav{
-background:linear-gradient(90deg,#ff9a9e,#fad0c4);
+background:#2B2B2B;
 padding:12px 0;
 box-shadow:0 4px 12px rgba(0,0,0,0.1);
 position:sticky;
@@ -374,15 +374,14 @@ margin:0;
 padding:0;
 }
 
+
+
 .nav-menu li a{
-text-decoration:none;
-color:#4a2c2a;
-font-weight:500;
-transition:0.3s;
+color:#ffffff;
 }
 
 .nav-menu li a:hover{
-color:#ffffff;
+color:#ffb6c1;
 }
 
 .contact-top{
