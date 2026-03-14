@@ -13,6 +13,81 @@
 <style>
 
 /* Contact Section */
+.contact-grid{
+display:grid;
+grid-template-columns: 35% 65%;
+gap:30px;
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+.contact-left{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.connect-section{
+margin-top:20px;
+}
+
+.contact-right{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.form-row{
+display:flex;
+gap:15px;
+}
+
+.form-row input,
+.form-row select{
+flex:1;
+}
+
+.contact-right input,
+.contact-right textarea,
+.contact-right select{
+width:100%;
+padding:10px;
+margin-bottom:12px;
+border-radius:6px;
+border:1px solid #ccc;
+font-family:Poppins;
+}
+
+.contact-right textarea{
+height:90px;
+}
+
+.contact-right button{
+background:#5C3A2E;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:20px;
+cursor:pointer;
+}
+
+.contact-btn{
+display:block;
+margin-top:10px;
+padding:10px;
+text-align:center;
+border-radius:20px;
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+.whatsapp{background:#25D366;}
+.instagram{background:#E4405F;}
+.google-review{background:#4285F4;}
 
 .contact-section{
 text-align:center;
@@ -118,46 +193,58 @@ Anika’s Homemade Cake Studio
 <!-- Contact Section -->
 <section class="contact-top">
 <div class="contact-grid">
-<!-- Address Section -->
-<div class="contact-card">
+<!-- LEFT SIDE : Address + Connect -->
+<div class="contact-left">
 <h3>📍 Address</h3>
-
-<p>Anika’s Homemade Cake Studio, Vision Aristo, Mukai Chowk<br> Ravet, Pune, Maharashtra – 412101
+<p>
+Anika’s Homemade Cake Studio<br></p>
+<p>
+Vision Aristo, Mukai Chowk<br>
+Ravet, Pune, Maharashtra – 412101
 </p>
+
 <p>🎂 Purely Eggless & Hygienic Cakes</p>
 <p>📲 WhatsApp Orders Only</p>
+<div class="connect-section">
+<h4>Connect With Us</h4>
+<a class="contact-btn whatsapp"
+href="https://wa.me/919503025610"
+target="_blank">Order on WhatsApp</a>
+
+<a class="contact-btn instagram"
+href="https://instagram.com/"
+target="_blank">Instagram</a>
+
+<a class="contact-btn google-review"
+href="https://search.google.com/local/writereview?placeid="
+target="_blank">Leave Google Review</a>
+</div>
 </div>
 
 
-<!-- Order Form -->
-<div class="contact-card">
+<!-- RIGHT SIDE : Order Form -->
+<div class="contact-right">
 <h3>🎂 Cake Order Request</h3>
+
 <form id="orderForm">
+<div class="form-row">
 <input type="text" placeholder="Your Name" required>
 <input type="tel" placeholder="Phone Number" required>
+</div>
+<div class="form-row">
 <select>
 <option>Birthday Cake</option>
 <option>Anniversary Cake</option>
 <option>Kids Theme Cake</option>
 <option>Custom Cake</option>
 </select>
-<textarea placeholder="Cake details (flavor, weight, design)"></textarea>
+<input type="date">
+</div>
+<textarea placeholder="Cake details (Flavor, Weight, Design etc)"></textarea>
+<label>Upload Sample Image</label>
+<input type="file" accept="image/*">
 <button type="submit">Send Order</button>
 </form>
-</div>
-
-<!-- Social / Order Buttons -->
-<div class="contact-card">
-<h3>Connect With Us</h3>
-<a class="contact-btn whatsapp"
-href="https://wa.me/919503025610"
-target="_blank">Order on WhatsApp</a>
-<a class="contact-btn instagram"
-href="https://instagram.com/"
-target="_blank">Instagram</a>
-<a class="contact-btn google-review"
-href="https://g.page/r/CYWTIQpPnfqyEBM/review"
-target="_blank">Leave Google Review</a>
 </div>
 </div>
 </section>
