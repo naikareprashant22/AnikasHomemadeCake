@@ -196,11 +196,9 @@ Anika’s Homemade Cake Studio
 <!-- LEFT SIDE : Address + Connect -->
 <div class="contact-left">
 <h3>📍 Address</h3>
+<p style="font-weight: bold;">Anika’s Homemade Cake Studio<br></p>
 <p>
-Anika’s Homemade Cake Studio<br></p>
-<p>
-Vision Aristo, Mukai Chowk<br>
-Ravet, Pune, Maharashtra – 412101
+Vision Aristo, Mukai Chowk, Ravet, Pune, Maharashtra – 412101<br>
 </p>
 
 <p>🎂 Purely Eggless & Hygienic Cakes</p>
@@ -311,14 +309,22 @@ e.preventDefault();
 let name = document.querySelector('input[type="text"]').value;
 let phone = document.querySelector('input[type="tel"]').value;
 let cake = document.querySelector('select').value;
+let date = document.querySelector('input[type="date"]').value;
 let details = document.querySelector('textarea').value;
 
+let imageInput = document.querySelector('input[type="file"]');
+let imageName = imageInput.files.length > 0 ? imageInput.files[0].name : "No sample image attached";
+
 let message =
-"Hello, I want to order a cake.%0A%0A"+
+"Hello,%0A%0A"+
+"I would like to place an order for a cake from Anika’s Homemade Cake Studio. Kindly find my order details below.%0A%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+
 "Cake Type: "+cake+"%0A"+
-"Details: "+details;
+"Order Date: "+date+"%0A"+
+"Details: "+details+"%0A"+
+"Sample Image: "+imageName+"%0A%0A"+
+"I will attach the reference image in this chat.";
 
 window.open("https://wa.me/919503025610?text="+message);
 
