@@ -467,18 +467,3 @@ width:100%;
 border-radius:12px;
 box-shadow:0 6px 15px rgba(0,0,0,0.15);
 }
-
-
-.instagram-float{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#E1306C;
-color:white;
-font-size:22px;
-padding:14px 16px;
-border-radius:50%;
-box-shadow:0 6px 20px rgba(0,0,0,0.3);
-z-index:999;
-text-decoration:none;
-}
