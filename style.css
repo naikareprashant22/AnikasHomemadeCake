@@ -339,7 +339,7 @@ font-weight:bold;
 /* NAVBAR */
 
 .main-nav{
-background:linear-gradient(90deg,#ff9a9e,#fad0c4);
+background:linear-gradient(90deg,#ff9a9e,#2B2B2B);
 padding:12px 0;
 box-shadow:0 4px 12px rgba(0,0,0,0.1);
 position:sticky;
