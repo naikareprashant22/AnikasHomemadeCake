@@ -5,9 +5,99 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us | Anika’s Oven Studio</title>
 <meta name="description" content="Contact Anika’s Oven Studio in Ravet, Pune. Order hygienic eggless cakes via WhatsApp.">
+
 <link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* Contact Section */
+
+.contact-section{
+text-align:center;
+padding:60px 20px;
+}
+
+.contact-box{
+background:white;
+max-width:500px;
+margin:auto;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+line-height:1.8;
+}
+
+/* Buttons */
+
+.contact-buttons{
+margin-top:20px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+justify-content:center;
+}
+
+.contact-btn{
+padding:12px 20px;
+border-radius:25px;
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+.whatsapp{ background:#25D366; }
+.instagram{ background:#E4405F; }
+.google-review{ background:#4285F4; }
+
+/* Map */
+
+.map-container{
+width:85%;
+margin:40px auto;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Order Form */
+
+.order-form{
+max-width:600px;
+margin:60px auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.order-form input,
+.order-form textarea,
+.order-form select{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ccc;
+font-family:Poppins;
+}
+
+.order-form button{
+background:#ff6b9d;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-size:16px;
+}
+
+</style>
+
 </head>
+
 <body>
 
 <nav>
@@ -21,34 +111,96 @@
 </ul>
 </nav>
 
-<section class="section">
+<!-- Contact Section -->
+
+<section class="contact-section">
+
 <h2>Contact Us</h2>
 
-<p><strong>Location:</strong> Vision Aristo, Mukai Chowk, Ravet, Pune, Maharashtra - 412101</p>
-<p><strong>Specialty:</strong> Purely Eggless & Hygienic Cakes</p>
-<p><strong>Order Method:</strong> WhatsApp Only</p>
+<div class="contact-box">
 
-<br>
+<p>📍 <strong>Location:</strong><br>
+Vision Aristo, Mukai Chowk,<br>
+Ravet, Pune, Maharashtra – 412101</p>
 
-<a class="whatsapp-float" href="https://wa.me/919503025610?text=Good%20day%2C%0A%0AI%20would%20like%20to%20place%20an%20order%20for%20a%20cake.%20Kindly%20provide%20details%20regarding%20the%20available%20flavors%2C%20sizes%2C%20pricing%2C%20and%20delivery%20or%20pickup%20options.%0A%0AThank%20you%20in%20advance%20for%20your%20assistance." target="_blank">Order on WhatsApp</a>
+<p>🎂 <strong>Specialty:</strong><br>
+Purely Eggless & Hygienic Homemade Cakes</p>
+
+<p>📲 <strong>Order Method:</strong><br>
+WhatsApp Orders Only</p>
+
+<div class="contact-buttons">
+
+<a class="contact-btn whatsapp"
+href="https://wa.me/919503025610"
+target="_blank">Order on WhatsApp</a>
+
+<a class="contact-btn instagram"
+href="https://instagram.com/"
+target="_blank">View Instagram</a>
+
+<a class="contact-btn google-review"
+href="https://search.google.com/local/writereview?placeid="
+target="_blank">Leave Google Review</a>
+
+</div>
+
+</div>
 
 </section>
+
+<!-- Map -->
 
 <h2 style="text-align:center;">Find Us on Google</h2>
 
 <div class="map-container">
-<iframe 
+
+<iframe
 src="https://www.google.com/maps?q=Vision%20Aristo%20Ravet%20Pune&output=embed"
-width="100%" 
+width="100%"
 height="400"
 style="border:0;"
 allowfullscreen=""
 loading="lazy">
 </iframe>
+
 </div>
-  
+
+<!-- Order Form -->
+
+<section class="order-form">
+
+<h2 style="text-align:center;">Cake Order Request</h2>
+
+<form>
+
+<label>Name</label>
+<input type="text" placeholder="Your Name" required>
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Your Phone Number" required>
+
+<label>Cake Type</label>
+<select>
+<option>Birthday Cake</option>
+<option>Anniversary Cake</option>
+<option>Custom Theme Cake</option>
+<option>Kids Cake</option>
+</select>
+
+<label>Message / Cake Details</label>
+<textarea rows="4" placeholder="Flavor, weight, design details"></textarea>
+
+<button type="submit">Send Order Request</button>
+
+</form>
+
+</section>
+
 <footer>
-<p>© 2026 Anika’s Oven Studio</p>
+
+<p style="text-align:center">© 2026 Anika’s Oven Studio</p>
+
 </footer>
 
 </body>
