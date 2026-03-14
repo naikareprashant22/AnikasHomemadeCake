@@ -228,3 +228,26 @@ body {
 body {
   background: linear-gradient(to bottom, #fff8fb, #ffffff);
 }
+
+.review-section{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.review-btn{
+    display:inline-block;
+    background: linear-gradient(45deg,#ff4d8d,#ff7aa2);
+    color:white;
+    padding:14px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    margin-top:15px;
+    box-shadow:0 6px 12px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.review-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 16px rgba(0,0,0,0.2);
+}
