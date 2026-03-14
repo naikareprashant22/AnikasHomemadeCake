@@ -364,7 +364,7 @@ align-items:center;
     color: #fff;
     font-family: serif;
     font-size: xx-large;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 /* Menu */
