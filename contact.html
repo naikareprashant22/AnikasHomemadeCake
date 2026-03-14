@@ -196,13 +196,12 @@ Anika’s Homemade Cake Studio
 <!-- LEFT SIDE : Address + Connect -->
 <div class="contact-left">
 <h3>📍 Address</h3>
-<p style="font-weight: bold;">Anika’s Homemade Cake Studio<br></p>
-<p>
-Vision Aristo, Mukai Chowk, Ravet, Pune, Maharashtra – 412101<br>
+<p style="font-weight: bold;">   Anika’s Homemade Cake Studio<br></p>
+<p>  Vision Aristo, Mukai Chowk, Ravet, Pune, Maharashtra – 412101<br>
 </p>
 
 <p>🎂 Purely Eggless & Hygienic Cakes</p>
-<p>📲 WhatsApp Orders Only</p>
+
 <div class="connect-section">
 <h4>Connect With Us</h4>
 <a class="contact-btn whatsapp"
@@ -225,22 +224,47 @@ target="_blank">Leave Google Review</a>
 <h3>🎂 Cake Order Request</h3>
 
 <form id="orderForm">
+
 <div class="form-row">
 <input type="text" placeholder="Your Name" required>
 <input type="tel" placeholder="Phone Number" required>
 </div>
+
 <div class="form-row">
-<select>
+<select id="cakeType">
 <option>Birthday Cake</option>
 <option>Anniversary Cake</option>
 <option>Kids Theme Cake</option>
 <option>Custom Cake</option>
 </select>
-<input type="date">
+
+<input type="date" id="orderDate">
 </div>
-<textarea placeholder="Cake details (Flavor, Weight, Design etc)"></textarea>
-<label>Upload Sample Image</label>
-<input type="file" accept="image/*">
+
+<div class="form-row">
+<select id="cakeWeight">
+<option value="">Select Weight</option>
+<option>Half Kg</option>
+<option>1 Kg</option>
+<option>1.5 Kg</option>
+<option>2 Kg</option>
+<option>5 Kg</option>
+</select>
+<select id="cakeFlavor">
+<option value="">Select Flavor</option>
+<option>Chocolate</option>
+<option>Black Forest</option>
+<option>Butterscotch</option>
+<option>Red Velvet</option>
+<option>Pineapple</option>
+<option>Strawberry</option>
+<option>Vanilla</option>
+</select>
+</div>
+<textarea id="cakeDetails" placeholder="Cake details (design, message on cake etc.)"></textarea>
+<p style="font-size:13px;color:gray;margin-top:5px;">
+After clicking <b>Send Order</b>, please attach the reference cake image in WhatsApp.
+</p>
 <button type="submit">Send Order</button>
 </form>
 </div>
@@ -254,47 +278,14 @@ target="_blank">Leave Google Review</a>
 <div class="map-container">
 
 <iframe
-src="https://www.google.com/maps?q=Vision%20Aristo%20Ravet%20Pune&output=embed"
+src="https://www.google.com/maps/place/Anika%E2%80%99s+Homemade+Cake+Studio/@18.6766455,73.7415423,17.5z/data=!4m6!3m5!1s0x4884fd1ec0143615:0xb2fa9d4f0a219385!8m2!3d18.6764149!4d73.7482724!16s%2Fg%2F11z0nr74wm?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D"
 width="100%"
 height="400"
 style="border:0;"
 allowfullscreen=""
 loading="lazy">
 </iframe>
-
 </div>
-
-<!-- Order Form -->
-
-<section class="order-form">
-
-<h2 style="text-align:center;">Cake Order Request</h2>
-
-<form>
-
-<label>Name</label>
-<input type="text" placeholder="Your Name" required>
-
-<label>Phone Number</label>
-<input type="tel" placeholder="Your Phone Number" required>
-
-<label>Cake Type</label>
-<select>
-<option>Birthday Cake</option>
-<option>Anniversary Cake</option>
-<option>Custom Theme Cake</option>
-<option>Kids Cake</option>
-</select>
-
-<label>Message / Cake Details</label>
-<textarea rows="4" placeholder="Flavor, weight, design details"></textarea>
-
-<button type="submit">Send Order Request</button>
-
-</form>
-
-</section>
-
 <footer>
 
 <p style="text-align:center">© 2026 Anika’s Homemade Cake Studio</p>
@@ -308,23 +299,23 @@ e.preventDefault();
 
 let name = document.querySelector('input[type="text"]').value;
 let phone = document.querySelector('input[type="tel"]').value;
-let cake = document.querySelector('select').value;
-let date = document.querySelector('input[type="date"]').value;
-let details = document.querySelector('textarea').value;
-
-let imageInput = document.querySelector('input[type="file"]');
-let imageName = imageInput.files.length > 0 ? imageInput.files[0].name : "No sample image attached";
+let cakeType = document.getElementById("cakeType").value;
+let orderDate = document.getElementById("orderDate").value;
+let weight = document.getElementById("cakeWeight").value;
+let flavor = document.getElementById("cakeFlavor").value;
+let details = document.getElementById("cakeDetails").value;
 
 let message =
-"Hello,%0A%0A"+
+"Good day,%0A%0A"+
 "I would like to place an order for a cake from Anika’s Homemade Cake Studio. Kindly find my order details below.%0A%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+
-"Cake Type: "+cake+"%0A"+
-"Order Date: "+date+"%0A"+
-"Details: "+details+"%0A"+
-"Sample Image: "+imageName+"%0A%0A"+
-"I will attach the reference image in this chat.";
+"Cake Type: "+cakeType+"%0A"+
+"Cake Weight: "+weight+"%0A"+
+"Flavor: "+flavor+"%0A"+
+"Order Date: "+orderDate+"%0A"+
+"Details: "+details+"%0A%0A"+
+"I will attach the reference cake image in this WhatsApp chat.";
 
 window.open("https://wa.me/919503025610?text="+message);
 
