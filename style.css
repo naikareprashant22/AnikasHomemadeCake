@@ -155,3 +155,76 @@ footer {
     font-size: 2rem;
   }
 }
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(#fff5f7, #ffe6ec);
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #4a2c2a;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px 18px;
+  border-radius: 50px;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: #4a2c2a;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.cake-card {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(to bottom, #fff8fb, #ffffff);
+}
