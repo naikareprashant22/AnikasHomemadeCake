@@ -297,3 +297,41 @@ body {
     transform:translateY(-2px);
     box-shadow:0 8px 16px rgba(0,0,0,0.2);
 }
+
+.map-container{
+width:80%;
+margin:40px auto;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.contact-section{
+text-align:center;
+padding:50px 20px;
+}
+
+.contact-section h2{
+font-size:32px;
+margin-bottom:30px;
+}
+
+.contact-box{
+background:#fff;
+max-width:500px;
+margin:auto;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+line-height:1.8;
+font-size:16px;
+}
+
+.map-btn{
+background:#ff6b9d;
+color:white;
+padding:12px 20px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+}
