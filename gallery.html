@@ -7,7 +7,78 @@
       <meta name="description" content="Explore our birthday, anniversary, theme and fondant cake designs in Ravet, Pune.">
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-      <style> /* CATEGORY TABS */ .gallery-tabs{ display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-bottom:30px; } .tab-btn{ padding:10px 20px; border:none; border-radius:25px; background:#6b3e26; color:white; font-size:14px; cursor:pointer; transition:0.3s; } .tab-btn:hover{ background:#8c5a3c; } .tab-btn.active{ background:#d2691e; } /* GALLERY GRID (Pinterest Style) */ .gallery-grid{ column-count:3; column-gap:15px; margin-top:20px; } @media(max-width:900px){ .gallery-grid{ column-count:2; } } @media(max-width:500px){ .gallery-grid{ column-count:1; } } /* GALLERY ITEMS */ .gallery-grid img, .gallery-grid video{ width:100%; margin-bottom:15px; border-radius:12px; cursor:pointer; display:block; transition:transform .35s ease, box-shadow .3s ease; animation:fadeIn .8s ease; } .gallery-grid img:hover, .gallery-grid video:hover{ transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.25); } /* FADE ANIMATION */ @keyframes fadeIn{ from{ opacity:0; transform:translateY(15px); } to{ opacity:1; transform:translateY(0); } } /* LIGHTBOX */ .lightbox{ display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000; } .lightbox img{ max-width:90%; max-height:80%; border-radius:10px; } .lightbox span{ position:absolute; top:25px; right:35px; font-size:40px; color:white; cursor:pointer; } /* INSTAGRAM FLOAT BUTTON */ .instagram-float{ position:fixed; bottom:90px; right:20px; background:#E1306C; color:white; font-size:22px; padding:14px 16px; border-radius:50%; box-shadow:0 6px 20px rgba(0,0,0,0.3); z-index:999; text-decoration:none; } </style>
+      <style> /* CATEGORY TABS */ .gallery-tabs
+         { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-bottom:30px; } 
+         .tab-btn{ padding:10px 20px; border:none; border-radius:25px; background:#6b3e26; color:white; font-size:14px; cursor:pointer; transition:0.3s; } 
+         .tab-btn:hover{ background:#8c5a3c; } .tab-btn.active{ background:#d2691e; } /* GALLERY GRID (Pinterest Style) */ 
+         .gallery-grid{
+            column-count:5;
+            column-gap:15px;
+            margin-top:20px;
+            }
+        @media(max-width:1200px){
+            .gallery-grid{
+            column-count:4;
+            }
+            }
+            
+            @media(max-width:900px){
+            .gallery-grid{
+            column-count:3;
+            }
+            }
+            
+            @media(max-width:600px){
+            .gallery-grid{
+            column-count:2;
+            }
+            }
+            
+            @media(max-width:400px){
+            .gallery-grid{
+            column-count:1;
+            }
+            }
+         /* IMAGE SIZE CONTROL */
+
+         .gallery-grid img{
+         width:100%;
+         max-height:220px;
+         object-fit:cover;
+         margin-bottom:15px;
+         border-radius:12px;
+         cursor:pointer;
+         display:block;
+         transition:transform .35s ease, box-shadow .3s ease;
+         }
+
+   /* VIDEO SIZE SMALLER */
+   
+   .gallery-grid video{
+   width:100%;
+   max-height:180px;
+   object-fit:cover;
+   margin-bottom:15px;
+   border-radius:12px;
+   }
+   
+   /* HOVER EFFECT */
+   
+   .gallery-grid img:hover,
+   .gallery-grid video:hover{
+   transform:scale(1.05);
+   box-shadow:0 10px 25px rgba(0,0,0,0.25);
+   }
+         /* GALLERY ITEMS */ 
+         .gallery-grid img, .gallery-grid video{ width:100%; margin-bottom:15px; border-radius:12px; cursor:pointer; 
+                                                display:block; transition:transform .35s ease, box-shadow .3s ease; animation:fadeIn .8s ease; } 
+         .gallery-grid img:hover, .gallery-grid video:hover{ transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.25); } 
+         /* FADE ANIMATION */ @keyframes fadeIn{ from{ opacity:0; transform:translateY(15px); } to{ opacity:1; transform:translateY(0); } } 
+         /* LIGHTBOX */ .lightbox{ display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; 
+                                  align-items:center; z-index:1000; } .lightbox img{ max-width:90%; max-height:80%; border-radius:10px; } 
+         .lightbox span{ position:absolute; top:25px; right:35px; font-size:40px; color:white; cursor:pointer; } 
+         /* INSTAGRAM FLOAT BUTTON */ .instagram-float{ position:fixed; bottom:90px; right:20px; background:#E1306C; color:white; font-size:22px; 
+     padding:14px 16px; border-radius:50%; box-shadow:0 6px 20px rgba(0,0,0,0.3); z-index:999; text-decoration:none; } </style>
    </head>
    <body>
       <nav class="main-nav">
