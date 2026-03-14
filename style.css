@@ -335,3 +335,49 @@ border-radius:25px;
 text-decoration:none;
 font-weight:bold;
 }
+
+/* NAVBAR */
+
+.main-nav{
+background:linear-gradient(90deg,#ff9a9e,#fad0c4);
+padding:12px 0;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-container{
+width:90%;
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* Logo */
+
+.logo{
+font-size:22px;
+font-weight:600;
+color:#4a2c2a;
+}
+
+/* Menu */
+
+.nav-menu{
+list-style:none;
+display:flex;
+gap:25px;
+margin:0;
+padding:0;
+}
+
+.nav-menu li a{
+text-decoration:none;
+color:#4a2c2a;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-menu li a:hover{
+color:#ffffff;
+}
