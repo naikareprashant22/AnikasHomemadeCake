@@ -58,13 +58,115 @@
          </section>
       </section>
       <!-- LIGHTBOX --> 
-      <div id="lightbox" class="lightbox"> <span onclick="closeLightbox()">×</span> <img id="lightbox-img"> </div>
+      <div id="lightbox" class="lightbox">
+         <span onclick="closeLightbox()">×</span>
+         <img id="lightbox-img">
+      </div>
       <footer>
          <p>📍 Vision Aristo, Mukai Chowk, Ravet, Pune, Maharashtra - 412101</p>
          <p>© 2026 Anika’s Homemade Cake Studio</p>
       </footer>
       <a class="whatsapp-float" href="https://wa.me/919503025610?text=Good%20day%2C%0A%0AI%20would%20like%20to%20place%20an%20order%20for%20a%20cake.%20Kindly%20provide%20details%20regarding%20the%20available%20flavors%2C%20sizes%2C%20pricing%2C%20and%20delivery%20or%20pickup%20options.%0A%0AThank%20you%20in%20advance%20for%20your%20assistance." target="_blank">Order Now</a>
-      <a class="instagram-float" href="https://instagram.com/YOUR_INSTAGRAM_ID" target="_blank">📸</a>
-      <script> /* CATEGORY FILTER */ function filterSelection(category,btn){ let items=document.getElementsByClassName("gallery-item"); for(let i=0;i<items.length;i++){ if(category==="all"){ items[i].style.display="block"; } else{ if(items[i].classList.contains(category)){ items[i].style.display="block"; } else{ items[i].style.display="none"; } } } /* ACTIVE TAB */ let tabs=document.querySelectorAll(".tab-btn"); tabs.forEach(tab=>tab.classList.remove("active")); btn.classList.add("active"); } /* LIGHTBOX */ function openLightbox(src){ document.getElementById("lightbox").style.display="flex"; document.getElementById("lightbox-img").src=src; } function closeLightbox(){ document.getElementById("lightbox").style.display="none"; } </script> 
+       <!--<a class="instagram-float" href="https://instagram.com/YOUR_INSTAGRAM_ID" target="_blank">📸</a>--> 
+      <script>
+
+/* CATEGORY FILTER */
+
+function filterSelection(category,btn){
+
+let items=document.getElementsByClassName("gallery-item");
+
+for(let i=0;i<items.length;i++){
+
+if(category==="all"){
+items[i].style.display="block";
+}
+else{
+if(items[i].classList.contains(category)){
+items[i].style.display="block";
+}
+else{
+items[i].style.display="none";
+}
+}
+
+}
+
+/* ACTIVE TAB */
+
+let tabs=document.querySelectorAll(".tab-btn");
+
+tabs.forEach(tab=>tab.classList.remove("active"));
+
+btn.classList.add("active");
+
+}
+
+
+/* LIGHTBOX */
+
+let currentIndex=0;
+let images=document.querySelectorAll(".gallery-item");
+
+function openLightbox(src){
+
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=src;
+
+images.forEach((img,index)=>{
+if(img.src===src){
+currentIndex=index;
+}
+});
+
+}
+
+function closeLightbox(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+
+/* MOBILE SWIPE */
+
+let startX=0;
+
+document.getElementById("lightbox").addEventListener("touchstart",e=>{
+startX=e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend",e=>{
+
+let endX=e.changedTouches[0].clientX;
+
+if(startX-endX>50){
+nextImage();
+}
+
+if(endX-startX>50){
+prevImage();
+}
+
+});
+
+
+function nextImage(){
+
+currentIndex=(currentIndex+1)%images.length;
+
+document.getElementById("lightbox-img").src=images[currentIndex].src;
+
+}
+
+function prevImage(){
+
+currentIndex=(currentIndex-1+images.length)%images.length;
+
+document.getElementById("lightbox-img").src=images[currentIndex].src;
+
+}
+
+</script>
    </body>
 </html>
