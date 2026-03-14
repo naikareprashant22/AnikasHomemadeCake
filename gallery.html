@@ -5,8 +5,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery | Anika’s Homemade Cake Studio</title>
 <meta name="description" content="Explore our birthday, anniversary, theme and fondant cake designs in Ravet, Pune.">
+
 <link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* FILTER BUTTONS */
+
+.gallery-filter{
+text-align:center;
+margin-bottom:30px;
+}
+
+.gallery-filter button{
+padding:10px 18px;
+margin:5px;
+border:none;
+border-radius:20px;
+background:#6b3e26;
+color:white;
+cursor:pointer;
+font-size:14px;
+transition:0.3s;
+}
+
+.gallery-filter button:hover{
+background:#8c5a3c;
+}
+
+/* GALLERY GRID */
+
+.gallery-grid{
+column-count:3;
+column-gap:15px;
+margin-top:20px;
+}
+
+/* HOVER EFFECT */
+
+.gallery-grid img,
+.gallery-grid video{
+width:100%;
+border-radius:12px;
+cursor:pointer;
+transition:transform .4s ease, box-shadow .3s;
+}
+
+.gallery-grid img:hover,
+.gallery-grid video:hover{
+transform:scale(1.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+  @media(max-width:900px){
+.gallery-grid{
+column-count:2;
+}
+}
+
+@media(max-width:500px){
+.gallery-grid{
+column-count:1;
+}
+}
+
+.gallery-grid img,
+.gallery-grid video{
+width:100%;
+margin-bottom:15px;
+border-radius:12px;
+cursor:pointer;
+transition:transform .35s ease, box-shadow .3s ease;
+display:block;
+}
+
+.gallery-grid img:hover,
+.gallery-grid video:hover{
+transform:scale(1.04);
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.gallery-grid img,
+.gallery-grid video{
+animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+}
+
+.lightbox span{
+position:absolute;
+top:25px;
+right:35px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+</style>
+
 </head>
 <body>
 
@@ -26,6 +154,7 @@ Anika’s Homemade Cake Studio
 </nav>
 
 <section class="section">
+
 <h2>Our Cake Gallery</h2>
 
 <div class="card-grid">
@@ -38,36 +167,83 @@ Anika’s Homemade Cake Studio
 <div class="card">Bento Cakes</div>
 </div>
 
+<!-- FILTER BUTTONS -->
+
+<div class="gallery-filter">
+<button onclick="filterSelection('all')">All</button>
+<button onclick="filterSelection('birthday')">Birthday</button>
+<button onclick="filterSelection('anniversary')">Anniversary</button>
+<button onclick="filterSelection('theme')">Theme</button>
+</div>
+
+
+<!-- BIRTHDAY -->
+
 <section class="gallery-section">
+
 <h2>Birthday Cakes</h2>
+
 <div class="gallery-grid">
-<img src="images/10.jpeg" alt="Birthday Cake" style="width:100%; border-radius:12px;">
-<img src="images/5.jpeg" alt="Birthday Cake" style="width:100%; border-radius:12px;">
-<video controls>
+
+<img src="images/10.jpeg" alt="Birthday Cake" class="gallery-item birthday" onclick="openLightbox(this.src)">
+
+<img src="images/5.jpeg" alt="Birthday Cake" class="gallery-item birthday" onclick="openLightbox(this.src)">
+
+<video controls class="gallery-item birthday">
 <source src="images/Video1.mp4" type="video/mp4">
 </video>
+
 </div>
+
 </section>
 
+
+<!-- ANNIVERSARY -->
+
 <section class="gallery-section">
+
 <h2>Anniversary Cakes</h2>
+
 <div class="gallery-grid">
-<img src="images/4.jpeg" alt="Birthday Cake" style="width:100%; border-radius:12px;">
-<img src="images/4.jpeg" alt="Anniversary Cake">
+
+<img src="images/4.jpeg" alt="Anniversary Cake" class="gallery-item anniversary" onclick="openLightbox(this.src)">
+
+<img src="images/4.jpeg" alt="Anniversary Cake" class="gallery-item anniversary" onclick="openLightbox(this.src)">
+
 </div>
+
 </section>
+
+
+<!-- THEME -->
 
 <section class="gallery-section">
+
 <h2>Theme Cakes</h2>
+
 <div class="gallery-grid">
-<img src="images/1.jpeg" alt="Birthday Cake" style="width:100%; border-radius:12px;">
-<img src="images/1.jpeg">
-<video controls>
+
+<img src="images/1.jpeg" alt="Theme Cake" class="gallery-item theme" onclick="openLightbox(this.src)">
+
+<img src="images/1.jpeg" alt="Theme Cake" class="gallery-item theme" onclick="openLightbox(this.src)">
+
+<video controls class="gallery-item theme">
 <source src="images/Video1.mp4" type="video/mp4">
 </video>
+
 </div>
+
 </section>
 
+</section>
+
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" class="lightbox">
+<span onclick="closeLightbox()">×</span>
+<img id="lightbox-img">
+</div>
 
 
 <footer>
@@ -76,6 +252,52 @@ Anika’s Homemade Cake Studio
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/919503025610?text=Good%20day%2C%0A%0AI%20would%20like%20to%20place%20an%20order%20for%20a%20cake.%20Kindly%20provide%20details%20regarding%20the%20available%20flavors%2C%20sizes%2C%20pricing%2C%20and%20delivery%20or%20pickup%20options.%0A%0AThank%20you%20in%20advance%20for%20your%20assistance." target="_blank">Order Now</a>
+
+
+<script>
+
+/* FILTER */
+
+function filterSelection(category){
+
+let items = document.getElementsByClassName("gallery-item");
+
+for(let i=0;i<items.length;i++){
+
+if(category==="all"){
+items[i].style.display="block";
+}
+else{
+if(items[i].classList.contains(category)){
+items[i].style.display="block";
+}
+else{
+items[i].style.display="none";
+}
+}
+
+}
+
+}
+
+
+/* LIGHTBOX */
+
+function openLightbox(src){
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("lightbox-img").src=src;
+
+}
+
+function closeLightbox(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+</script>
 
 </body>
 </html>
